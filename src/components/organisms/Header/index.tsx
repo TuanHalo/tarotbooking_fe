@@ -1,5 +1,5 @@
 type HeaderProps = {};
 
 export const Header = ({}: HeaderProps) => {
-  return <header>Header</header>;
+  return <header className="container">Header</header>;
 };
