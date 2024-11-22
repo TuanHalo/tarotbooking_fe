@@ -1,6 +1,6 @@
 # Tarot Booking Project (Frontend)
 ---
-1. __Cài đặt__
+## 1. Set up
 - __Clone repository__
 ```bash
 git clone https://github.com/TuanHalo/tarotbooking_fe.git
@@ -18,7 +18,7 @@ yarn
 VITE_API_BASE_URL=https://api.example.com
 ```
 ---
-2. __Git Branch Structure__
+## 2. Git Branch Structure
 - __Branch Naming__
 
 | Name | Used |
