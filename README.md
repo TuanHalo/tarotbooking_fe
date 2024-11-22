@@ -1,50 +1,67 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+# Tarot Booking Project (Frontend)
+---
+1. __Cài đặt__
+- __Clone repository__
+```bash
+git clone https://github.com/TuanHalo/tarotbooking_fe.git
+cd tarotbooking_fe
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+- __Install dependencies__
+```bash
+yarn
 ```
+
+- __Set up environment: Create file `.env` in root folder__
+```env
+# Server Configuration
+VITE_API_BASE_URL=https://api.example.com
+```
+---
+2. __Git Branch Structure__
+- __Branch Naming__
+
+| Name | Used |
+|------|------|
+|`main`|Production-ready code. Only merged from `develop`.|
+|`develop`|The main development branch. Features and fixes are merged here.|
+|`feature/`|For new features.|
+|`bugfix/`|For bug fixes during development.|
+|`hotfix/`|For urgent fixes in `main`.|
+|`chore/`|For tasks like documentation, CI/CD setup, or refactoring.|
+
+- __Commit Message Guidelines__
+```bash
+<type>: <short description>
+```
+
+| Types | Used |
+|-------|------|
+|`feat`|A new feature (e.g., `feat: add login form`).|
+|`fix`|A bug fix (e.g., `fix: correct popup position`).|
+|`docs`|Documentation changes (e.g., `docs: update README with Git rules`).|
+|`style`|Code style changes (e.g., `style: format code with Prettier`).|
+|`refactor`|Code refactoring (e.g., `refactor: optimize user service`).|
+|`test`|Adding or updating tests (e.g., `test: add unit tests for Login component`).|
+|`chore`|Miscellaneous tasks (e.g., `chore: update dependencies`).|
+
+- __Workflow__
+  - Create a Branch: Always create a branch from `develop`.
+  ```bash
+  git checkout develop
+  git pull origin develop
+  git checkout -b <branch-name>
+  ```
+
+  - Commit Changes
+  ```bash
+  git add .
+  git commit -m "<type>: <description>"
+  ```
+
+  - Push Branch
+  ```bash
+  git push origin <branch_name>
+  ```
+
+  - Create a Pull Request: Set the base branch to `develop`.
