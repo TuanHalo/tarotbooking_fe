@@ -10,5 +10,7 @@ api.interceptors.request.use((config: InternalAxiosRequestConfig) => {
 
 api.interceptors.response.use(
   (res: AxiosResponse) => res.data,
-  async (error) => {}
+  async (error) => {
+    console.log(error);
+  }
 );
