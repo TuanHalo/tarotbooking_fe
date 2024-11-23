@@ -1,0 +1,14 @@
+@use "@/styles/mixins";
+
+.a-star {
+  @include mixins.flex($gap: 2px);
+
+  img {
+    width: 20px;
+    aspect-ratio: 1;
+
+    @include mixins.breakpoint(lg) {
+      width: 24px;
+    }
+  }
+}

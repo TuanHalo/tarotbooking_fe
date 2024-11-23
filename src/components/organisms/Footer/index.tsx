@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
-import { TFooterIconLink, TFooterLinkList, TFooterTextLink } from "./dto";
+import {
+  TFooterProps,
+  IFooterIconLink,
+  IFooterLinkList,
+  IFooterTextLink,
+} from "./dto";
 import "./index.scss";
 
-type FooterProps = {};
-
-const SOCIALS: TFooterLinkList<TFooterIconLink> = {
+const SOCIALS: IFooterLinkList<IFooterIconLink> = {
   title: "Follow Us",
   list: [
     {
@@ -22,7 +25,7 @@ const SOCIALS: TFooterLinkList<TFooterIconLink> = {
   ],
 };
 
-const LISTS: TFooterLinkList<TFooterTextLink>[] = [
+const LISTS: IFooterLinkList<IFooterTextLink>[] = [
   {
     title: "Explore",
     list: [
@@ -89,7 +92,7 @@ const LISTS: TFooterLinkList<TFooterTextLink>[] = [
   },
 ];
 
-export const Footer = ({}: FooterProps) => {
+export const Footer = ({}: TFooterProps) => {
   return (
     <footer className="o-footer">
       <div className="container">
