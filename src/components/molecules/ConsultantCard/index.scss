@@ -1,0 +1,135 @@
+@use "@/styles/mixins";
+
+$bg-color: #ffffff26;
+$name-text-color: #ffca40;
+$topic-text-color: #777777;
+$topic-bg-color: #ffffffcc;
+$desc-text-color: #ffffff;
+$sold-text-color: #ffffff;
+
+.m-consultantCard {
+  @include mixins.flex($align: center, $direction: column, $gap: 16px);
+  padding: 24px;
+  border-radius: 8px;
+  background-color: $bg-color;
+  backdrop-filter: blur(15px);
+  width: 400px;
+  height: 100%;
+
+  @include mixins.breakpoint(sm) {
+    width: 262px;
+  }
+
+  @include mixins.breakpoint(md) {
+    width: 352px;
+  }
+
+  @include mixins.breakpoint(lg) {
+    width: 309px;
+  }
+
+  @include mixins.breakpoint(xl) {
+    width: 369px;
+  }
+
+  @include mixins.breakpoint(xxl) {
+    width: 428px;
+  }
+
+  &_avatar {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  &_name {
+    color: $name-text-color;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+
+    @include mixins.breakpoint(md) {
+      font-size: 28px;
+      line-height: 36px;
+    }
+
+    @include mixins.breakpoint(lg) {
+      font-size: 32px;
+      line-height: 40px; 
+    }
+  }
+
+  &_topics {
+    @include mixins.flex($justify: center, $gap: 8px, $wrap: wrap);
+
+    li {
+      color: $topic-text-color;
+      font-size: 11px;
+      line-height: 16px;
+      letter-spacing: 0.5px;
+      background-color: $topic-bg-color;
+      backdrop-filter: blur(20px);
+      padding: 4px 24px;
+      border-radius: 135px;
+
+      @include mixins.breakpoint(md) {
+        font-size: 12px;
+      }
+
+      @include mixins.breakpoint(lg) {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.1px;
+      }
+    }
+  }
+
+  &_desc {
+    color: $desc-text-color;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+    text-align: center;
+    word-wrap: break-word;
+
+    @include mixins.breakpoint(md) {
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.25px;
+    }
+
+    @include mixins.breakpoint(lg) {
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  &_brief {
+    @include mixins.flex($justify: space-between, $align: center);
+    width: 100%;
+
+    &--sold {
+      color: $sold-text-color;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 400;
+      letter-spacing: 0.4px;
+
+      @include mixins.breakpoint(md) {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.25px;
+      }
+
+      @include mixins.breakpoint(lg) {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+}

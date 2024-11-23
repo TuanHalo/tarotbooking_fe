@@ -1,5 +1,7 @@
 import { MainLayout } from "@/components";
-import { Home } from "@/pages";
+import React from "react";
+
+const Home = React.lazy(() => import("@/pages/Home"));
 
 export const routers = [
   {
