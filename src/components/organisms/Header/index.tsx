@@ -1,5 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
-import "./styles.scss";
+import "./index.scss";
 
 const NAVLINK = {
   login: "/login",
@@ -11,6 +11,7 @@ type HeaderProps = {};
 export const Header = ({}: HeaderProps) => {
   return (
     <header className="o-header">
+      <h1>Tarot Booking</h1>
       <div className="container">
         <Link to="/" className="o-header_logo">
           <img src="images/logo.svg" alt="" />

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { TFooterIconLink, TFooterLinkList, TFooterTextLink } from "./dto";
-import "./styles.scss";
+import "./index.scss";
 
 type FooterProps = {};
 
