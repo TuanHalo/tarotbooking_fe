@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-import { TFooterLinkList } from "./dto";
+import { TFooterIconLink, TFooterLinkList, TFooterTextLink } from "./dto";
+import "./styles.scss";
 
 type FooterProps = {};
 
-const SOCIALS: TFooterLinkList = {
+const SOCIALS: TFooterLinkList<TFooterIconLink> = {
   title: "Follow Us",
   list: [
     {
@@ -21,7 +22,7 @@ const SOCIALS: TFooterLinkList = {
   ],
 };
 
-const LISTS: TFooterLinkList[] = [
+const LISTS: TFooterLinkList<TFooterTextLink>[] = [
   {
     title: "Explore",
     list: [
@@ -90,54 +91,35 @@ const LISTS: TFooterLinkList[] = [
 
 export const Footer = ({}: FooterProps) => {
   return (
-    <footer className="bg-black py-[80px]">
+    <footer className="o-footer">
       <div className="container">
-        <div className="mb-[40px]">
-          <p className="text-white text-[24px] md:text-[28px] lg:text-center font-bold mb-[16px] lg:mb-[24px]">
-            {SOCIALS.title}
-          </p>
-          <ul className="flex lg:justify-center items-center gap-[24px] lg:gap-[40px] ">
-            {SOCIALS.list.map(
-              (social, index) =>
-                "icon" in social && (
-                  <li key={index}>
-                    <Link to={social.href}>
-                      <img
-                        src={social.icon}
-                        alt=""
-                        className="h-[48px] lg:h-[64px]"
-                      />
-                    </Link>
-                  </li>
-                )
-            )}
+        <div className="o-footer_socials">
+          <p className="o-footer_socials--title">{SOCIALS.title}</p>
+          <ul className="o-footer_socials--list">
+            {SOCIALS.list.map((social, index) => (
+              <li key={index}>
+                <Link to={social.href}>
+                  <img src={social.icon} alt="" />
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
-        <ul className="text-white flex flex-col lg:flex-row lg:justify-between gap-[40px] lg:gap-[16px]">
+        <ul className="o-footer_list">
           {LISTS.map((list, id) => (
             <li key={id}>
-              <p className="text-[24px] md:text-[28px] font-bold mb-[16px] ">
-                {list.title}
-              </p>
-              <ul className="flex lg:flex-col items-center lg:items-start gap-[24px] lg:gap-[16px]">
-                {list.list.map(
-                  (link, index) =>
-                    "name" in link && (
-                      <li key={index}>
-                        <Link
-                          to={link.href}
-                          className="text-[12px] md:text-[14px] lg:text-[16px] border-b-[1.5px]"
-                        >
-                          {link.name}
-                        </Link>
-                      </li>
-                    )
-                )}
+              <p className="o-footer_list--title">{list.title}</p>
+              <ul className="o-footer_list--detail">
+                {list.list.map((link, index) => (
+                  <li key={index}>
+                    <Link to={link.href}>{link.name}</Link>
+                  </li>
+                ))}
               </ul>
             </li>
           ))}
         </ul>
-        <p className="text-white text-[10px] md:text-[12px] lg:text-[14px] font-normal mt-[80px]">
+        <p className="o-footer_copyright">
           2024 Ingenio, LLC. All rights reserved. Keen is for entertainment
           purposes only. Must be 18 years or older.
         </p>
