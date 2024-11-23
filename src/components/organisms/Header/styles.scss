@@ -1,0 +1,53 @@
+@use "@/styles/mixins";
+
+$register-text-color: #854b71;
+$register-bg-color: #ffd8ed;
+$login-text-color: #211a1d;
+$header-line-color: #00000033;
+
+.o-header {
+  padding-block: 16px;
+  border-bottom: 1px solid $header-line-color;
+
+  .container {
+    @include mixins.flex($justify: space-between, $align: center);
+  }
+
+  &_logo {
+    img {
+      height: 48px;
+
+      @include mixins.breakpoint(lg) {
+        height: 64px;
+      }
+    }
+  }
+
+  &_nav {
+    @include mixins.flex($gap: 8px);
+
+    a {
+      padding: 12px;
+      border-radius: 1000px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0.15px;
+
+      @include mixins.breakpoint(lg) {
+        font-size: 22px;
+        line-height: 28px;
+        letter-spacing: normal;
+      }
+
+      &:first-child {
+        color: $register-text-color;
+        background-color: $register-bg-color;
+      }
+
+      &:last-child {
+        color: $login-text-color;
+      }
+    }
+  }
+}

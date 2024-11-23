@@ -8,7 +8,7 @@ export type TFooterIconLink = {
   href: string;
 };
 
-export type TFooterLinkList = {
+export type TFooterLinkList<Link> = {
   title: string;
-  list: TFooterTextLink[] | TFooterIconLink[];
+  list: Link[];
 };
