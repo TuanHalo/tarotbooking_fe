@@ -1,14 +1,13 @@
 import { NavLink, Link } from "react-router-dom";
 import "./index.scss";
+import { THeaderProps } from "./dto";
 
 const NAVLINK = {
   login: "/login",
   register: "/register",
 };
 
-type HeaderProps = {};
-
-export const Header = ({}: HeaderProps) => {
+export const Header = ({}: THeaderProps) => {
   return (
     <header className="o-header">
       <h1>Tarot Booking</h1>

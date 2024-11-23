@@ -1,14 +1,16 @@
-export type TFooterTextLink = {
+export interface IFooterTextLink {
   name: string;
   href: string;
 };
 
-export type TFooterIconLink = {
+export interface IFooterIconLink {
   icon: string;
   href: string;
 };
 
-export type TFooterLinkList<Link> = {
+export interface IFooterLinkList<Link> {
   title: string;
   list: Link[];
 };
+
+export type TFooterProps = {};
