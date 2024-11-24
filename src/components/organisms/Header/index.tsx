@@ -1,6 +1,7 @@
 import { NavLink, Link } from "react-router-dom";
 import "./index.scss";
-import { THeaderProps } from "./dto";
+
+export type THeaderProps = {};
 
 const NAVLINK = {
   login: "/login",

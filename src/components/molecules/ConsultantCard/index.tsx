@@ -1,7 +1,16 @@
 import { Star } from "@/components";
-import { IConsultantCardProps } from "./dto";
 import "./index.scss";
 import { generatePath, Link } from "react-router-dom";
+
+export interface IConsultantCardProps {
+  id: string;
+  avatar: string;
+  name: string;
+  topics: string[];
+  desc: string;
+  review: number;
+  sold: number;
+}
 
 export const ConsultantCard = ({
   id,
