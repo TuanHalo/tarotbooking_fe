@@ -4,6 +4,7 @@ import { Banner, IBanner } from "./Banner";
 import { Aboutus, IAboutus } from "./Aboutus";
 import { Categories, ICategory } from "./Categories";
 import { Getstarted, IGetstartedProps } from "./Getstarted";
+import { IReview, Review } from "./Review";
 
 const BANNER: IBanner = {
   title: "Welcome to Tarot Booking!",
@@ -93,6 +94,24 @@ const GETSTARTED: IGetstartedProps = {
   ],
 };
 
+const REVIEWS: IReview[] = [
+  {
+    avatar: "/images/avatar.png",
+    desc: "Lorem ipsum dolor sit amet consectetur. Ridiculus in aenean semper gravida vitae commodo congue. Amet est justo urna donec nibh. Lorem ipsum dolor sit amet consectetur. Ridiculus in aenean semper gravida vitae commodo congue. Amet est justo urna donec nibh.",
+    name: "Raymond J",
+  },
+  {
+    avatar: "/images/avatar.png",
+    desc: "Lorem ipsum dolor sit amet consectetur. Ridiculus in aenean semper gravida vitae commodo congue. Amet est justo urna donec nibh. Lorem ipsum dolor sit amet consectetur. Ridiculus in aenean semper gravida vitae commodo congue. Amet est justo urna donec nibh.",
+    name: "Raymond K",
+  },
+  {
+    avatar: "/images/avatar.png",
+    desc: "Lorem ipsum dolor sit amet consectetur. Ridiculus in aenean semper gravida vitae commodo congue. Amet est justo urna donec nibh. Lorem ipsum dolor sit amet consectetur. Ridiculus in aenean semper gravida vitae commodo congue. Amet est justo urna donec nibh.",
+    name: "Raymond L",
+  },
+];
+
 const Home = ({}: THomeProps) => {
   return (
     <div className="p-home">
@@ -100,7 +119,7 @@ const Home = ({}: THomeProps) => {
       <Aboutus {...ABOUTUS} />
       <Getstarted {...GETSTARTED} />
       <Categories categories={CATEGORIES} />
-      <section className="p-home_review">Review</section>
+      <Review reviews={REVIEWS} />
     </div>
   );
 };

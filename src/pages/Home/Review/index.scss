@@ -1,0 +1,130 @@
+@use "@/styles/mixins";
+
+$bg-color: #854b71;
+$title-text-color: #ffffff;
+$desc-text-color: #ffffff;
+$name-text-color: #ffffff;
+$line-color: #d3c2c9;
+
+.p-home_review {
+  background-color: $bg-color;
+
+  &--title {
+    color: $title-text-color;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+
+    @include mixins.breakpoint(md) {
+      font-size: 28px;
+      line-height: 36px;
+    }
+
+    @include mixins.breakpoint(lg) {
+      font-size: 32px;
+      line-height: 40px;
+      text-align: center;
+    }
+  }
+
+  &--reviewList {
+    @include mixins.flex($direction: column);
+
+    @include mixins.breakpoint(xl) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 48px;
+    }
+
+    .reviewList_item {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 16px;
+      position: relative;
+
+      @include mixins.breakpoint(xl) {
+        width: calc(50% - 48px);
+      }
+
+      &:not(:last-child)::after {
+        content: "";
+        display: block;
+        border-bottom: 1px solid $line-color;
+        grid-column: 1 / span 2;
+        margin-block: 24px;
+        width: 100%;
+
+        @include mixins.breakpoint(xl) {
+          display: none;
+        }
+      }
+
+      &:nth-child(odd)::before {
+        content: "";
+        display: none;
+        position: absolute;
+        height: 100%;
+        border-right: 1px solid $line-color;
+        right: -24px;
+
+        @include mixins.breakpoint(xl) {
+          display: block;
+        }
+      }
+
+      &--img {
+        grid-row: 1 / span 2;
+        width: 125px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      &--desc {
+        grid-column: 2 / 2;
+        text-align: center;
+        color: $desc-text-color;
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 400;
+        letter-spacing: 0.4px;
+
+        @include mixins.breakpoint(md) {
+          font-size: 14px;
+          line-height: 20px;
+          letter-spacing: 0.25px;
+        }
+
+        @include mixins.breakpoint(lg) {
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 0.5px;
+        }
+      }
+
+      &--name {
+        grid-column: 2 / 2;
+        text-align: center;
+        color: $name-text-color;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        letter-spacing: 0.1px;
+
+        @include mixins.breakpoint(md) {
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 0.15px;
+          font-weight: 500;
+        }
+
+        @include mixins.breakpoint(lg) {
+          font-size: 22px;
+          line-height: 28px;
+          letter-spacing: normal;
+        }
+      }
+    }
+  }
+}
