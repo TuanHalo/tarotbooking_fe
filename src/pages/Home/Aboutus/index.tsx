@@ -1,5 +1,11 @@
-import { IAboutusProps } from "./dto";
 import "./index.scss";
+
+export interface IAboutus {
+  title: string;
+  desc: string;
+}
+
+export interface IAboutusProps extends IAboutus {}
 
 export const Aboutus = ({ title, desc }: IAboutusProps) => {
   return (

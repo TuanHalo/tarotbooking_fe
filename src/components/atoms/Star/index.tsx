@@ -1,5 +1,8 @@
-import { IStarProps } from "./dto";
 import "./index.scss";
+
+export interface IStarProps {
+  star: number;
+}
 
 export const Star = ({ star }: IStarProps) => {
   return (
