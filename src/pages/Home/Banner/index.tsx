@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
 import "./index.scss";
-import { IBannerProps } from "./dto";
+
+export interface IBanner {
+  title: string;
+  desc: string;
+  actionName: string;
+  actionLink: string;
+}
+
+export interface IBannerProps extends IBanner {}
 
 export const Banner = ({
   title,

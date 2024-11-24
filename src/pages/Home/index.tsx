@@ -1,13 +1,9 @@
 import "./index.scss";
 import { THomeProps } from "./dto";
-import { Banner } from "./Banner";
-import { Aboutus } from "./Aboutus";
-import { Categories } from "./Categories";
-import { IAboutus } from "./Aboutus/dto";
-import { ICategory } from "./Categories/dto";
-import { IBanner } from "./Banner/dto";
-import { Getstarted } from "./Getstarted";
-import { IGetstartedProps } from "./Getstarted/dto";
+import { Banner, IBanner } from "./Banner";
+import { Aboutus, IAboutus } from "./Aboutus";
+import { Categories, ICategory } from "./Categories";
+import { Getstarted, IGetstartedProps } from "./Getstarted";
 
 const BANNER: IBanner = {
   title: "Welcome to Tarot Booking!",

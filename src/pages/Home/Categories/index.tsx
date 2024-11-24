@@ -1,6 +1,16 @@
 import { Link } from "react-router-dom";
 import "./index.scss";
-import { ICategoriesProps } from "./dto";
+
+export interface ICategory {
+  icon: string;
+  name: string;
+  href: string;
+}
+
+export interface ICategoriesProps {
+  categories: ICategory[];
+}
+
 
 export const Categories = ({ categories }: ICategoriesProps) => {
   return (

@@ -1,6 +1,11 @@
-import { ConsultantCard } from "@/components";
-import { IGetstartedProps } from "./dto";
+import { ConsultantCard, IConsultantCardProps } from "@/components";
 import "./index.scss";
+
+export interface IGetstartedProps {
+  title: string;
+  desc: string;
+  consultantList: IConsultantCardProps[];
+}
 
 export const Getstarted = ({
   title,
